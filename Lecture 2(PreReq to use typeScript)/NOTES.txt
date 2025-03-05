@@ -1,0 +1,14 @@
+1). Install Node.js
+TypeScript requires Node.js to run and compile .ts files. Download and install it from: Node.js Official Site
+
+2). Install TypeScript
+You can install TypeScript globally (for all projects) or locally (for a single project): npm install -g typescript
+
+3). Install a Code Editor (Recommended: VS Code)
+VS Code has great TypeScript support. Download it from: VS Code Official Site
+
+4).  Compile TypeScript Files
+Once TypeScript is installed, create a .ts file and compile it to JavaScript: tsc filename.ts
+
+
+

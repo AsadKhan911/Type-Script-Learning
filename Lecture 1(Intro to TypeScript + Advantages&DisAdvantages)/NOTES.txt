@@ -1,0 +1,19 @@
+What is typeScript?
+
+TypeScript is a programming language that is a super set of JavaScript by adding static types. It helps catch errors early and makes code more readable and maintainable. It’s widely used for large projects because it improves reliability and scalability.
+
+Example:
+let firstName = "Asad"
+firstName = 105
+firstName = true
+console.log(firstName)
+
+This code will run perfectly in JS and returns output as 'true'
+
+But in TS:
+let firstName : string = "Asad"
+firstName = 105
+firstName = true
+console.log(firstName)
+
+It will give error

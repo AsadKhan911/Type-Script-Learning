@@ -1,0 +1,123 @@
+What is type annotations in TypeScript:
+
+Type annotations in TypeScript are a way to explicitly define the type of a variable, function parameter, or return value. This helps in catching type-related errors during development and improves code readability and maintainability.
+
+Commonly Used Type Annotations:
+
+1). These are the basic types available in TypeScript.
+
+string → Represents textual data.
+number → Represents numeric values.
+boolean → Represents true or false
+
+let name: string = "Maheen";
+let age: number = 25;
+let isActive: boolean = true;
+
+2. Arrays:
+Used to define an array of a specific type.
+
+let numbers: number[] = [1, 2, 3, 4, 5];
+let names: string[] = ["Alice", "Bob"];
+
+3. Tuple
+A tuple defines an array with a fixed number of elements with specific types.
+
+let person: [string, number] = ["John", 30];
+
+4. Any
+Allows any type, disabling type checking (not recommended for strict type safety).
+
+let data: any = "Hello";
+data = 100; // No error
+
+
+5. Union Types (|)
+A variable can hold multiple types.
+
+let id: string | number;
+id = "123";
+id = 456;
+
+6. Function Annotations
+Defines types for function parameters and return values.
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+7. Interface
+Defines a structure for an object.
+
+interface User {
+  name: string;
+  age: number;
+}
+
+let user: User = {
+  name: "Sarah",
+  age: 28
+};
+
+8. Type Aliases
+Used to create custom types.
+
+type Employee = {
+  name: string;
+  department: string;
+};
+
+let emp: Employee = {
+  name: "John Doe",
+  department: "HR"
+};
+
+9. Enums
+Used to define a set of named constants.
+
+enum Color {
+  Red,
+  Green,
+  Blue
+}
+
+let myColor: Color = Color.Green;
+
+10. Void
+Used when a function does not return a value.
+
+function logMessage(message: string): void {
+  console.log(message);
+}
+
+11. Never
+Represents a value that never occurs (e.g., functions that always throw an error).
+
+function throwError(message: string): never {
+  throw new Error(message);
+}
+
+12. Type Assertions
+Used to tell TypeScript to treat a value as a specific type.
+
+let someValue: any = "Hello, TypeScript!";
+let strLength: number = (someValue as string).length;
+
+INTERVIEW QUESTIONS:
+
+let num: number = NaN;
+console.log(num);
+
+What should be the output of this?
+
+Explanation:
+NaN is a special numeric value in JavaScript and TypeScript that represents an invalid number.
+The type of NaN is number, so assigning it to a variable of type number does not cause an error.
+When console.log(num) is executed, it prints NaN.
+
+
+->Difference between any and unknown
+->When to use never type
+->How to use union (|) and intersection (&) types
+->Differences between type aliases and interfaces
+->How to define and use generics in TypeScript

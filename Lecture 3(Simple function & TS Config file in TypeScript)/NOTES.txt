@@ -1,0 +1,34 @@
+Function to write in TS:
+
+function sum(a:number , b:number):number{
+    return a + b;
+}
+
+//function call
+console.log(sum(10,10))
+
+a:number , b:number , This means parameter 1 will be a number aswell parametet two , and :number{return a + b;} this means it will also return a number.
+
+What should be the issue?
+function sum(a , b){
+    return a + b;
+}
+
+//function call
+console.log(sum(10,"Asad"))
+
+If we write like this without any type , it will work fine but not purely for number output will be '10Asad'
+
+Benefit of TS Configuration File:
+function sum(a:number , b:number):number{
+    return a + b;
+}
+
+//function call
+console.log(sum(10,"Asad"))
+
+Suppose we write this code in ts and compile this file to JS using tsc , It will show error in terminal but it will create a compiled .JS file which we don't want because it contains an error , So for that we will create a ts.config file using 'tsc --init'
+
+And we will uncomment this line '"noEmitOnError": true,' in ts.config file , Now it will not compile the code to js until we clear the error.
+
+Now when we compile we will type command like this "tsc --noEmitOnError lecture3.ts" and it will not compile untill 0 error remains.
