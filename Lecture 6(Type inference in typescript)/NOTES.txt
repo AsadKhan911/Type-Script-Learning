@@ -1,0 +1,11 @@
+What is type inference in TypeScript?
+
+It is the ability of typescript compiler to assume or judge the type of a variable , function etc , with explicitly defining the type.
+
+E.G : let myName :string = "Asad" , OR , let nameName = "Asad" 
+
+The one in which we give type is known as "Type Annotation" and the second one is typeInference , in second one the compiler auto detects the type and can handle the type of variable.
+
+POINT:
+
+We heavily don't rely on type inference , it handles but when we have confusion regarding any variable type and we are not sure we can handle it with type annotation for example we can give type 'unknown' etc. or 'ANY'.

@@ -1,0 +1,8 @@
+
+const greet = (name:string , id:number) :string => {
+    return `Student name is ${name} , id is ${id}`
+}
+
+greet("Asad" , 1)
+
+In this way we call the function, write type of parameters and return type 

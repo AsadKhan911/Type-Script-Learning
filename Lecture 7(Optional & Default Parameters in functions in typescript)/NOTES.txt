@@ -1,0 +1,41 @@
+Default parameter : Parameter are those values which we pass at the type of function definition. Default parameter are those , suppose at the type of function call user didnot give any value of any parameter so instead of throwing error , typescript compiler will use the default parameter.
+
+EXAMPLE:
+
+const sum = (a: number, b: number): number => {
+    return a + b
+}
+
+let output = sum(1, 2)
+console.log(output)
+
+This is our simple function.
+
+Default parameter:
+
+const sum = (a: number, b: number=5): number => {
+    return a + b
+}
+
+let output = sum(1)
+console.log(output)
+
+Now you can see , we give only one argument and the second parameter has default value which will use incase of missing argument.
+
+Optional Parameter: Optional parameter means if we have 3 parameter and one is optional , and user give 2 arguements when calling a function so typescript won't throw an error because one parameter was optional.
+
+SYNTAX:
+
+const sumOptional = (a: number, b: number , c?:number): number => {
+    if(c) {
+    return a + b + c
+    }
+    else{
+        return a + b
+    }
+}
+
+let output1 = sum(1,2)
+console.log(output1)
+
+In this way we can add optional parameter by adding ? after it
