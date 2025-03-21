@@ -1,0 +1,12 @@
+Using map in typeScript:
+
+// Define an array of numbers
+const numbers: number[] = [1, 2, 3, 4, 5];
+
+// Using map to square each number
+const squaredNumbers: number[] = numbers.map(num => num * num);
+console.log(squaredNumbers);
+
+// Using filter to get only even numbers
+const evenNumbers: number[] = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers);

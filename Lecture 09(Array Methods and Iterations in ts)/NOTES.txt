@@ -1,0 +1,6 @@
+The iteration methods in typscript are same as javascript:
+
+1). Using for loop
+2). Using for of loop
+3). Using forEach loop
+4). Using pop push , shift unshift etc.
