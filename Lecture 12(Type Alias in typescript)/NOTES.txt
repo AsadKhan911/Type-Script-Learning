@@ -1,0 +1,34 @@
+A Type Alias is a way to name a custom type so that you can reuse it easily. Instead of repeating the same type structure multiple times, you define it once and use it wherever needed.
+
+Syntax of Type Alias:
+
+type TypeName = { key: valueType; key2: valueType2; }; //First word capital ie TypeName
+
+Example of Type Alias:
+
+// Define a type alias
+type Person = {
+  name: string;
+  age: number;
+  isStudent: boolean;
+};
+
+// Use the type alias
+const person1: Person = {
+  name: "Asad",
+  age: 25,
+  isStudent: true,
+};
+
+const person2: Person = {
+  name: "Ali",
+  age: 22,
+  isStudent: false,
+};
+
+console.log(person1, person2);
+
+Why Use Type Aliases?
+Reusability – Instead of writing the same type again and again, you define it once and use it everywhere.
+Readability – Code becomes cleaner and easier to understand.
+Easier Updates – If you need to change the type, you update it in one place instead of multiple places.

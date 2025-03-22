@@ -1,0 +1,9 @@
+In TypeScript, an enum (short for "enumeration") is a special type used to define a set of named constants. It helps make code more readable and organized by giving meaningful names to numeric or string values. Just like we do in mongoose enum : ["user" , "provider"] etc.
+
+enum Role {
+  User = "user",
+  Provider = "provider"
+}
+
+let myRole: Role = Role.User; // Assigning an enum value
+console.log(myRole); // Output: "user"

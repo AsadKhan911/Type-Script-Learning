@@ -1,0 +1,40 @@
+What is a Call Signature in TypeScript?
+
+A Call Signature in TypeScript is a way to define the structure of a function type without implementing it. It describes:
+- The function's parameters and their types
+- The function's return type
+
+It's like a blueprint for functions!
+
+Basic Syntax of a Call Signature:
+
+type FunctionType = (param1: Type, param2: Type) => ReturnType;
+
+Basic Example of a Call Signature:
+
+// Define a call signature using a type alias
+type Add = (a: number, b: number) => number;
+
+// Implement a function using that type
+const sum: Add = (x, y) => x + y;
+
+console.log(sum(5, 10)); // Output: 15
+
+Call Signature Inside an Object:
+
+Call signatures are also useful inside objects when defining function properties.
+
+// Object with a call signature
+type MathOperations = {
+  add: (a: number, b: number) => number;
+  subtract: (a: number, b: number) => number;
+};
+
+// Implementing the object
+const calculator: MathOperations = {
+  add: (x, y) => x + y,
+  subtract: (x, y) => x - y,
+};
+
+console.log(calculator.add(10, 5)); // Output: 15
+console.log(calculator.subtract(10, 5)); // Output: 5

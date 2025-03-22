@@ -1,0 +1,15 @@
+The objects in typescript are exactly the same as in javascript , just the difference is we gave type annotation here.
+
+EXAMPLE:
+
+const person: { 
+name: string; 
+age: number; 
+isStudent: boolean 
+} = {
+  name: "Asad",
+  age: 25,
+  isStudent: true,
+};
+
+console.log(person);
