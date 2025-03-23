@@ -1,0 +1,43 @@
+A tuple in TypeScript is a special type of array that allows you to specify the exact type of elements and their order.
+
+let person: [string, number] = ["Asad", 25];
+
+console.log(person[0]); // Output: "Asad"
+console.log(person[1]); // Output: 25
+
+If you try to change the order, TypeScript will give an error:
+
+person = [25, "Asad"]; // ❌ Error: Type 'number' is not assignable to type 'string'
+
+Array:
+
+let person: (string | number)[] = ["Asad", 25];
+
+console.log(person[0]); // Output: "Asad"
+console.log(person[1]); // Output: 25
+
+Array me order ni hota means , kahi b string ya number put kr skte hein , but in tuples agar string phele likha h to string phele aega then number etc.
+
+Example of an Array:
+
+let numbers: number[] = [10, 20, 30];
+numbers.push(40);  //Allowed
+console.log(numbers); // [10, 20, 30, 40]
+
+Example of a Tuple:
+
+let employee: [string, number] = ["John", 35];
+employee.push(40); //Allowed but not recommended in some cases
+console.log(employee); // ["John", 35, 40] (Unexpected behavior)
+
+Note: Even though push() works on tuples, it can lead to unexpected behavior because tuples are meant to have a fixed structure.
+
+We have to make tuples 'readonly' , so that no push() no pop() can happen:
+
+let person: readonly [string, number] = ["Asad", 25];
+
+console.log(person[0]); // Output: "Asad"
+console.log(person[1]); // Output: 25
+
+// person.push(30); // ❌ Error: Property 'push' does not exist on type 'readonly [string, number]'
+

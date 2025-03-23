@@ -1,0 +1,47 @@
+What are Generics in TypeScript?
+
+Generics in TypeScript allow you to create reusable, flexible, and type-safe code. Instead of specifying a fixed type, generics let you define a placeholder type that can work with multiple data types.
+
+Why Use Generics?
+Reusability → Write one function/class that works with different types.
+
+Type Safety → Avoid unexpected type errors.
+
+Flexibility → Use different data types without rewriting the code.
+
+EXAMPLE: Without generics, you need separate functions for different types:
+
+function echoString(value: string): string {
+    return value;
+}
+
+function echoNumber(value: number): number {
+    return value;
+}
+
+This is repetitive! Instead, we can use generics:
+
+function echo<T>(value: T): T {
+    return value;
+}
+
+console.log(echo("Hello")); // Output: Hello (T = string)
+console.log(echo(123));     // Output: 123 (T = number)
+console.log(echo(true));    // Output: true (T = boolean)
+
+How it Works?
+<T> is a generic type placeholder (You can name it anything, but T is common).
+
+The function takes an argument value of type T and returns T.
+
+When calling echo(), TypeScript automatically infers the type.
+
+Generics with Arrays:
+
+function getFirstElement<T>(arr: T[]): T {
+    return arr[0];
+}
+
+console.log(getFirstElement([10, 20, 30]));  // Output: 10 (T = number)
+console.log(getFirstElement(["apple", "banana"]));  // Output: "apple" (T = string)
+
