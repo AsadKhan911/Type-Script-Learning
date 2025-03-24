@@ -1,0 +1,96 @@
+Union (∪) (Representation | )
+Union means combining all unique elements from two sets.
+
+Example:
+Set A = {1, 2, 3}
+Set B = {3, 4, 5}
+A ∪ B = {1, 2, 3, 4, 5} (All elements, no duplicates)
+
+Intersection (∩) (Representation & )
+Intersection means finding common elements in two sets.
+
+Example:
+Set A = {1, 2, 3}
+Set B = {3, 4, 5}
+A ∩ B = {3} (Only common element)
+
+-> Union in TypeScript (| Operator)
+
+In TypeScript, a union type allows a variable to have multiple types using the | (pipe) operator.
+
+let value: string | number;
+
+value = "Hello"; //Allowed (string)
+value = 42;      //Allowed (number)
+// value = true; //Error (boolean is not allowed)
+
+function displayId(id: string | number) {
+    console.log(`ID: ${id}`);
+}
+
+displayId(101);       // Allowed (number)
+displayId("A102");    // Allowed (string)
+// displayId(true);   // Error (boolean is not allowed)
+
+=> Intersection in TypeScript (& Operator)
+In TypeScript, an intersection type (&) combines multiple types into one. The resulting type must have all properties from the intersected types.
+
+Example:
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = {
+  employeeId: number;
+  department: string;
+};
+
+// Intersection Type
+type Worker = Person & Employee;
+
+const worker1: Worker = {
+  name: "Asad",
+  age: 25,
+  employeeId: 101,
+  department: "Software",
+};
+
+console.log(worker1);
+
+Example2: (With function)
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = {
+  employeeId: number;
+  department: string;
+};
+
+// Intersection Type
+type Worker = Person & Employee;
+
+// Function using Intersection Type
+function getWorkerInfo(worker: Worker): void {
+  console.log(`Name: ${worker.name}`);
+  console.log(`Age: ${worker.age}`);
+  console.log(`Employee ID: ${worker.employeeId}`);
+  console.log(`Department: ${worker.department}`);
+}
+
+// Calling the function with a valid object
+const worker1: Worker = {
+  name: "Asad",
+  age: 25,
+  employeeId: 101,
+  department: "Software",
+};
+
+getWorkerInfo(worker1);
+
+
+
