@@ -1,0 +1,5 @@
+The first problem we were facing was that every time we do change in typescript file we have to do 'tsc file' then it convert to js and then we run it.
+
+But when we are working on big project we want automation , instead typing tsc everytime , for that purpose we have to write 'tsc --init' in terminal.
+
+This will create tsconfig.json file , and then we write in terminal 'tsc -w OR tsc --watch' , then the compiler start watching the changes and auto saving in js files.

@@ -1,0 +1,59 @@
+What is an Interface in TypeScript?
+An interface in TypeScript is a way to define the structure of an object. It specifies what properties and methods an object should have.
+
+interface User {
+  id: number;
+  name: string;
+  email?: string; // Optional property
+}
+
+const user1: User = {
+  id: 1,
+  name: "Alice",
+};
+
+console.log(user1);
+
+Interface vs Type Alias
+Both interface and type can be used to define object shapes, but they have some key differences.
+
+interface UserInterface {
+  id: number;
+  name: string;
+}
+
+type UserType = {
+  id: number;
+  name: string;
+};
+
+const user1: UserInterface = { id: 1, name: "Alice" };
+const user2: UserType = { id: 2, name: "Bob" };
+
+Extending and Merging
+Interface supports inheritance (extends).
+
+Type alias supports intersections (&).
+
+interface Person {
+  name: string;
+}
+
+interface Employee extends Person {
+  id: number;
+}
+
+const emp: Employee = { name: "John", id: 123 };
+
+Type Alias Extension (Intersection):
+
+type PersonType = {
+  name: string;
+};
+
+type EmployeeType = PersonType & {
+  id: number;
+};
+
+const emp2: EmployeeType = { name: "John", id: 123 };
+
