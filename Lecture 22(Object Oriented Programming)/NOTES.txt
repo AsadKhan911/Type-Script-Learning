@@ -1,0 +1,81 @@
+1. Class:
+
+A class is like a blueprint for creating objects.
+It defines what properties (data) and methods (functions) the objects will have.
+
+EXAMPLE:
+class Persons {
+  name : string;
+  age : number;
+  hobbies : string[];
+  ...
+}
+
+Here, class Persons is a blueprint for creating a person.
+It tells us that every Persons object will have:
+
+name → a text (string)
+
+age → a number
+
+hobbies → a list of text items (array of strings)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Constructor:
+
+A constructor is a special function inside the class.
+It runs automatically when you create a new object and is used to assign values to the class properties.
+
+EXAMPLE:
+constructor(name: string, age: number, hobbies: string[]) {
+  this.name = name;
+  this.age = age;
+  this.hobbies = hobbies;
+}
+
+This constructor takes 3 values: name, age, and hobbies,
+and stores them in the object using this.name, this.age, and this.hobbies.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Object / Instance of a Class
+
+An object (also called an instance of a class) is a real version made using the class blueprint.
+You create an object using the new keyword, which calls the constructor.
+
+EXAMPLE:
+const persons1 : Persons = new Persons(name: "Asad", age: 12, hobbies: ["painting", "walking"]); //Without constructor we can't do this thing.
+const persons2 : Persons = new Persons(name: "Ali", age: 14, hobbies: ["dancing", "reading"]);
+
+persons1 and persons2 are both objects created using the Persons class.
+These are instances of the class, meaning real data-filled versions of the blueprint.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference between classes and objects (simple objects used in functional programming) :
+
+| Feature                | **Class**                                                                | **Object (Object Literal)**                |
+| ---------------------- | ------------------------------------------------------------------------ | ------------------------------------------ |
+| **What is it?**        | A blueprint for creating multiple similar objects                        | A standalone object with data and behavior |
+| **When to use?**       | When you want to create **many similar objects** with the same structure | When you need just **one specific object** |
+| **How is it defined?** | Using `class` keyword                                                    | Using `{}` directly                        |
+| **Code Style**         | Object-Oriented Programming (OOP)                                        | Functional / Declarative / Simple JS       |
+| **Reusability**        | Yes (you can create many instances)                                      | No (usually used once)                     |
+
+Code:
+
+class Persons {
+name : string;
+age : number;
+hobbies : string[];
+
+constructor(name: string, age: number, hobbies: string[]) {
+this.name = name;
+this.age = age;
+this.hobbies = hobbies;
+}
+}
+
+const persons1 : Persons = new Persons(name: "Asad" , age: 12 , hobbies: ["painting" , "walking])
+const persons1 : Persons = new Persons(name: "Ali" , age: 14 , hobbies: ["dancing" , "reading])

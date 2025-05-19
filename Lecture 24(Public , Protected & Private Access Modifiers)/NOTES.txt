@@ -1,0 +1,85 @@
+| Modifier    | Access Scope                                                                |
+| ----------- | --------------------------------------------------------------------------- |
+| `public`    | Accessible **everywhere** (inside the class, subclass, and outside).        |
+| `protected` | Accessible **inside the class** and **in subclasses**, but **not outside**. |
+| `private`   | Accessible **only inside the class**. Not in subclasses or outside.         |
+
+Code Example:
+
+class Persons {
+  public name: string;         // ✅ Accessible from anywhere
+  protected age: number;       // 🔐 Accessible within this class and its subclasses
+  private hobbies: string[];   // 🚫 Only accessible within this class
+
+  constructor(name: string, age: number, hobbies: string[]) {
+    this.name = name;
+    this.age = age;
+    this.hobbies = hobbies;
+  }
+
+  introduce(): string {
+    return `Hi I'm ${this.name} and I'm ${this.age} years old. I love ${this.hobbies.join(", ")}.`;
+  }
+}
+
+class Student extends Persons {
+  public grade: number;
+
+  constructor(name: string, age: number, hobbies: string[], grade: number) {
+    super(name, age, hobbies);
+    this.grade = grade;
+  }
+
+  introduce(): string {
+    // ✅ this.name is public → accessible here
+    // ✅ this.age is protected → accessible here
+    // ❌ this.hobbies is private → NOT accessible here → will cause an error
+    return `Hi I'm ${this.name}, I'm ${this.age} years old, and I'm in grade ${this.grade}.`;
+    // 🛑 this.hobbies.join(", ") would cause a compile-time error
+  }
+}
+
+-->  What happens if we try to access these outside the class?
+
+const student1 = new Student("Adil", 25, ["coding", "sports"], 10);
+
+console.log(student1.name);    // ✅ Works (public)
+console.log(student1.grade);   // ✅ Works (public)
+
+console.log(student1.age);     // ❌ Error: 'age' is protected
+console.log(student1.hobbies); // ❌ Error: 'hobbies' is private
+
+NOTE: Private variables cannot be accessed outside of the class even through public functions in TypeScript but protected variable can access through function outside class.
+
+EXAMPLE:
+
+class Persons {
+  public name: string;
+  protected age: number;
+  private hobbies: string[];
+
+  constructor(name: string, age: number, hobbies: string[]) {
+    this.name = name;
+    this.age = age;
+    this.hobbies = hobbies;
+  }
+
+  // Public method to get a protected value (age)
+  public getAge(): number {
+    return this.age;  // ✅ Accessing protected within the class is fine
+  }
+
+  // Public method to get private value (hobbies)
+  public getHobbies(): string[] {
+    return this.hobbies;  // ❌ ERROR: Property 'hobbies' is private and only accessible within class 'Persons'.
+  }
+}
+
+const person = new Persons("Asad", 12, ["painting", "walking"]);
+
+// Accessing through public method that returns private or protected data
+console.log(person.getAge());        // ✅ Works fine: 12
+// console.log(person.getHobbies());  // ❌ ERROR: Cannot access 'hobbies' as it is private
+
+// ❌ Direct access
+// console.log(person.hobbies); // Error: Property 'hobbies' is private

@@ -1,0 +1,88 @@
+1. What is Inheritance?
+Inheritance means one class (child) can reuse the properties and methods of another class (parent), instead of writing them again.
+
+Example: A Student is a kind of Person. So, a Student inherits name, age, hobbies, and the introduce() method from Person.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. What is extends?
+
+The keyword extends is used when one class wants to inherit from another.
+It means: "Hey, Student will now have everything that Persons has."
+
+EXAMPLE : class Student extends Persons {
+
+This means Student inherits all:
+
+properties (name, age, hobbies)
+
+and methods (like introduce())
+from Persons.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 2. What is super()?
+
+super() is used to call the constructor of the parent class.
+It passes values to the Persons class constructor so the child class can reuse it.
+
+EXAMPLE: super(name, age, hobbies);
+
+This line says:
+
+“Call the parent constructor and assign name, age, hobbies using the parent class logic.”
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Instance of class using inheritance:
+
+Means the Student class gets all features of the Persons class without rewriting them.
+
+EXAMPLE: 
+
+const student1 = new Student("Adil", 25, ["coding", "sports"], 10);
+student1.introduce();
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CODE:
+class Persons {
+  name: string;
+  age: number;
+  hobbies: string[];
+
+  constructor(name: string, age: number, hobbies: string[]) {
+    this.name = name;
+    this.age = age;
+    this.hobbies = hobbies;
+  }
+
+  introduce(): string {
+    return `Hi I'm ${this.name} and I'm ${this.age} years old. I love ${this.hobbies.join(", ")}.`;
+  }
+}
+
+// 🔽 Student extends Persons: means Student inherits from Persons
+class Student extends Persons {
+  grade: number;
+
+  constructor(name: string, age: number, hobbies: string[], grade: number) {
+    // 🟩 super is used to call the constructor of the parent class
+    super(name, age, hobbies);  
+    this.grade = grade;
+  }
+
+  // override introduce() method
+  introduce(): string {
+    return `Hi I'm ${this.name}, I'm ${this.age} years old, I love ${this.hobbies.join(", ")}, and I'm in grade ${this.grade}.`;
+  }
+}
+
+// Creating instances
+const persons1: Persons = new Persons("Asad", 12, ["painting", "walking"]);
+const persons2: Persons = new Persons("Ali", 14, ["dancing", "reading"]);
+
+console.log(persons2.introduce());
+
+const student1: Student = new Student("Adil", 25, ["coding", "sports"], 10);
+console.log(student1.introduce());

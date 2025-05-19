@@ -1,0 +1,36 @@
+a TypeScript shorthand that allows you to declare and initialize class properties directly in the constructor using access modifiers (public, private, or protected). This makes your code cleaner and shorter.
+
+What Happens Normally (Without Shorthand):
+
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+In this example:
+
+You declare properties (name, age) at the top.
+
+Then you assign them inside the constructor using this.name = name.
+
+Using Shorthand with Access Modifiers:
+
+class Person {
+  constructor(public name: string, public age: number) {}
+}
+
+
+In this example:
+
+The constructor parameters with access modifiers automatically:
+
+Declare the class properties.
+
+Assign the parameter values to those properties.
+
+So there's no need to manually declare the properties or use this.name = name.
