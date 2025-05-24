@@ -62,20 +62,3 @@ Difference between classes and objects (simple objects used in functional progra
 | **How is it defined?** | Using `class` keyword                                                    | Using `{}` directly                        |
 | **Code Style**         | Object-Oriented Programming (OOP)                                        | Functional / Declarative / Simple JS       |
 | **Reusability**        | Yes (you can create many instances)                                      | No (usually used once)                     |
-
-Code:
-
-class Persons {
-name : string;
-age : number;
-hobbies : string[];
-
-constructor(name: string, age: number, hobbies: string[]) {
-this.name = name;
-this.age = age;
-this.hobbies = hobbies;
-}
-}
-
-const persons1 : Persons = new Persons(name: "Asad" , age: 12 , hobbies: ["painting" , "walking])
-const persons1 : Persons = new Persons(name: "Ali" , age: 14 , hobbies: ["dancing" , "reading])
