@@ -1,0 +1,33 @@
+What is Type Safety?
+
+Type safety in TypeScript means:
+Making sure the variables or values are used in the correct data type during coding.
+
+For example:
+
+let age: number = 25;
+age = "twenty-five"; // ❌ TypeScript will show error (string is not number)
+
+What are Typeof Guards?
+typeof guards are used to check the type at runtime (when code is running), so TypeScript knows what type you're working with and lets you safely use it.
+
+Example with typeof type guard:
+
+function printValue(value: string | number) {
+  if (typeof value === "string") {
+    console.log("Uppercased:", value.toUpperCase()); // ✅ Safe to use string methods
+  } else {
+    console.log("Value + 10:", value + 10); // ✅ Safe to use number operations
+  }
+}
+
+Why is this type safety?
+
+Because:
+
+You checked the type before using it.
+So TypeScript doesn’t throw an error.
+It guards the type and keeps your code safe from mistakes.
+
+
+

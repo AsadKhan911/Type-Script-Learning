@@ -1,0 +1,56 @@
+Static means no need to create an instance to use it:
+
+Normally, to use properties or methods, you first create an object (instance) of the class:
+
+const obj = new MyClass();
+obj.myMethod();
+
+But static properties or methods belong to the class itself, so you can use them directly without creating an object.
+
+MyClass.myStaticMethod();
+console.log(MyClass.myStaticProperty);
+
+EXAMPLE:
+
+class Calculator {
+  pulic static pi = 3.14;
+
+  static multiply(x: number, y: number): number {
+    return x * y;
+  }
+}
+
+console.log(Calculator.pi);            // Use static property directly on class
+console.log(Calculator.multiply(4, 5));  // Use static method directly on class
+
+QUESTION:
+
+Do static properties have to be assigned a value?
+Usually, yes, static properties are given a value when you declare them.
+Because static properties belong to the class itself, they act like shared variables — so it makes sense to assign them a value upfront.
+
+Example:
+
+class Example {
+  static count = 0;  // assigned initial value
+}
+
+But can you declare a static property without a value?
+Technically, yes, you can declare a static property without initializing it right away, just like instance properties:
+
+class Example {
+  static count: number;  // declared but not initialized yet
+}
+
+But if you do this, the value will be undefined until you assign it explicitly somewhere in your code:
+
+Example.count = 10;  // assigning value later
+console.log(Example.count);  // 10
+
+Bonus: Why assign a value right away?
+Because static properties are often used as shared constants, counters, or configuration values, it’s common to assign them immediately:
+
+EXAMPLE:
+class Circle {
+  static pi = 3.14;  // constant value for all circles
+}

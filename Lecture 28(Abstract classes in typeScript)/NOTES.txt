@@ -1,0 +1,67 @@
+What is an Abstract Class?
+An abstract class is like a blueprint for other classes. For example if we have similar properties(variables) or methods in different classes , and we want not to write same properties or methods again and again in every class so we make "Abstract Class" so every class with similar properties can inherit it and use its properties and methods.
+
+Example in Easy Code:
+
+// 🧱 Abstract class: a base design
+abstract class Animal {
+  abstract makeSound(): void; // abstract method — no body
+
+  move(): void {
+    console.log("Animal is moving.");
+  }
+}
+
+// 🐶 Subclass
+class Dog extends Animal {
+  makeSound(): void {
+    console.log("Woof woof!");
+  }
+}
+
+// 🐱 Subclass
+class Cat extends Animal {
+  makeSound(): void {
+    console.log("Meow!");
+  }
+}
+
+const dog = new Dog();
+dog.makeSound(); // Woof woof!
+dog.move();      // Animal is moving.
+
+const cat = new Cat();
+cat.makeSound(); // Meow!
+cat.move();      // Animal is moving.
+
+NOTE: This is NOT allowed: const a = new Animal(); // ❌ Error! You can't create an object from an abstract class directly.
+
+QUESTION : why we make abstract class i mean we can also do the same thing from a simple class?
+
+ANSWER: We use abstract classes when we want to force all child classes to implement specific methods, but we don’t want to allow direct creation(instance) of the parent class.
+
+ Normal Class:
+You can create objects from it.
+You can inherit from it.
+You can override methods, but you’re not forced to.
+
+Abstract Class:
+You CANNOT create objects from it.
+You CAN inherit from it.
+
+You MUST override the abstract methods in child class — or TypeScript gives an error.
+
+So why use Abstract Classes?
+Here’s why abstract classes are useful:
+
+1. Force structure in big projects:
+Imagine you're building a big system where many developers will create different types of Animal, like Dog, Cat, Elephant, etc. You want to make sure:
+Every animal must have a makeSound() method.
+But each one has its own sound.
+
+So you write:
+abstract class Animal {
+  abstract makeSound(): void;
+}
+
+Now every child must implement makeSound() — no one can forget it. This keeps the project organized and safe.

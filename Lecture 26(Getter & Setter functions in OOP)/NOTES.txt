@@ -1,0 +1,38 @@
+Check vs code file for better understanding.
+
+What is a getter?
+A getter is like a special door to look at the value of something inside your object.
+
+When you want to get or see a value, you use the getter.
+
+It acts like a function but you use it like a normal property (without parentheses).
+
+Example:
+Instead of calling person.getName(), you just write person.name and it gives you the value.
+
+What is a setter?
+A setter is a special door to change or set the value of something inside your object.
+
+When you want to update or change a value, you use the setter.
+
+It lets you control how the value is changed — you can check if it’s valid before saving it.
+
+Example:
+Instead of calling person.setName("Ali"), you just write person.name = "Ali" and it updates the value.
+
+Why do we use them?
+To hide the actual data inside the object (keep it private).
+
+To control how the data is read or changed.
+
+To add rules when updating data (like age can’t be negative).
+
+To make code cleaner and easier to use.
+
+Think of it like:
+Your object has a safe box with your data inside (_name).
+
+The getter is a window to look inside the safe box.
+
+The setter is a lockable door to change what’s inside — but it only opens if the new value is good.
+

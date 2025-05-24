@@ -1,0 +1,26 @@
+Differences between type and interface (as used in your code):
+Union Types
+
+type supports | (union) → type Data = Student | StudentAddress
+
+interface does not support union
+
+Extending
+
+type uses & → type Data = Student & StudentAddress (not shown, but possible)
+
+interface uses extends → interface Data extends Student, StudentAddress
+
+Merging (Same name)
+
+interface can be declared multiple times with the same name → merges automatically
+
+type cannot be declared twice with same name → throws error
+
+Class implementation
+
+interface used with implements in class
+
+type cannot be used with implements
+
+NOTE: Review code file for better understanding.
